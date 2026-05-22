@@ -4,17 +4,17 @@ from config import Config
 
 
 class Motor:
-    def __init__(self, config  : Config, freq : int=50000):
-        self.bin2 = Pin(config.BIN2, mode=Pin.OUT, pull=None)
-        self.bin1 = Pin(config.BIN1, mode=Pin.OUT, pull=None)
-        self.ain2 = Pin(config.AIN2, mode=Pin.OUT, pull=None)
-        self.ain1 = Pin(config.AIN1, mode=Pin.OUT, pull=None)
-        self.stby = Pin(config.STBY, mode=Pin.OUT, pull=None)
-        self.a_pwm = PWM(Pin(config.PWM_A), freq)
-        self.b_pwm = PWM(Pin(config.PWM_B), freq)
+    def __init__(self, freq : int=50000):
+        self.bin2 = Pin(Config.BIN2, mode=Pin.OUT, pull=None)
+        self.bin1 = Pin(Config.BIN1, mode=Pin.OUT, pull=None)
+        self.ain2 = Pin(Config.AIN2, mode=Pin.OUT, pull=None)
+        self.ain1 = Pin(Config.AIN1, mode=Pin.OUT, pull=None)
+        self.stby = Pin(Config.STBY, mode=Pin.OUT, pull=None)
+        self.a_pwm = PWM(Pin(Config.PWM_A), freq)
+        self.b_pwm = PWM(Pin(Config.PWM_B), freq)
 
-        self.a_offset = config.offsetA
-        self.b_offset = config.offsetB
+        self.a_offset = Config.offsetA
+        self.b_offset = Config.offsetB
 
         self.a_pwm.duty(0)
         self.b_pwm.duty(0)
