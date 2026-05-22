@@ -11,3 +11,13 @@ class Config:
 
     offsetA = True
     offsetB = True
+
+    SERVO_PIN = 23
+
+    SCK_PIN = 13
+    MOSI_PIN = 12
+    MISO_PIN = 14
+    SDA_PIN = 27
+    RST_PIN = 26
+
+    LED_PIN = 25

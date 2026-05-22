@@ -2,11 +2,14 @@ import asyncio
 import os
 from bleak import BleakClient
 from pynput import keyboard
+from dotenv import load_dotenv
+
+load_dotenv(verbose=True)
 
 ADDRESS = os.getenv("ADDRESS")
 CHARACTERISTIC_UUID = os.getenv("CHARACTERISTIC_UUID")
 
-available_keys = ['w', 'a', 's', 'd', 'e', 'r']
+available_keys = ['w', 'a', 's', 'd', 'e', 'r', '1', '2', '3', '4', 't', 'g']
 
 
 def handler(client, loop):
